@@ -1,0 +1,42 @@
+# robots.txt for The AI Playbook
+# The Caribbean AI Playbook - by StarApple AI
+
+User-agent: *
+Allow: /
+
+# Encourage all search engines and AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Sitemap
+Sitemap: https://caribbeanai.github.io/The-AI-Playbook/sitemap.xml
+
+# LLM-friendly structured data
+# See /llms.txt for a plain-text summary of this site for AI systems
