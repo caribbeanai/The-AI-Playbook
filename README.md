@@ -9,6 +9,10 @@ Created by **[Adrian Dunkley](https://adriandunkley.net/)**, physicist and AI sc
 - **[Explore 39 government use cases](government/use-cases.md)**
 - **[Download the structured catalogue](government/use-cases.json)**
 
+## Community problems and proposed solutions
+
+[One Person, One Problem](problems/README.md) connects the existing CAIA listening space with a reviewed, anonymised problem-and-solution register. Contributions are not published automatically.
+
 ## Choose a path
 
 | You are… | Start here | Useful outcome |
