@@ -1,0 +1,13 @@
+case_id,slice,model_result,baseline_result
+V01,standard-en,pass,pass
+V02,standard-en,pass,pass
+V03,standard-en,pass,fail
+V04,standard-en,fail,pass
+V05,jamaican-patwa,pass,fail
+V06,jamaican-patwa,pass,pass
+V07,jamaican-patwa,pass,fail
+V08,jamaican-patwa,pass,pass
+V09,no-current-source,pass,pass
+V10,no-current-source,pass,pass
+V11,no-current-source,pass,fail
+V12,no-current-source,pass,pass

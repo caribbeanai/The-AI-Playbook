@@ -1,0 +1,8 @@
+{
+  "overall": {"min_cases": 12, "min_pass_rate": 0.80},
+  "slices": {
+    "standard-en": {"min_cases": 4, "min_pass_rate": 0.75},
+    "jamaican-patwa": {"min_cases": 4, "min_pass_rate": 0.75},
+    "no-current-source": {"min_cases": 4, "min_pass_rate": 0.75}
+  }
+}

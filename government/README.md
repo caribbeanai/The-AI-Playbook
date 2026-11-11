@@ -9,6 +9,7 @@ These are **proposed implementation patterns**, not claims that any named govern
 - [Ministry and public-service use-case catalogue](use-cases.md): 39 use cases across 13 functional areas and three readiness levels.
 - [Caribbean readiness and safeguards](caribbean-readiness.md): local language, connectivity, privacy, resilience, accessibility and procurement requirements.
 - [Pilot and procurement templates](../templates/government-pilot.md): reusable project brief, risk register, evaluation plan and supplier questions.
+- [TurtleBird AI safety toolkit](turtlebird/README.md): test a pilot, compare it with the current service and review failures during monitoring.
 - [Evidence and references](sources.md): official sources and clear boundaries on what they establish.
 
 ## Three levels, not a race to autonomy

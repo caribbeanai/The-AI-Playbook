@@ -6,6 +6,7 @@ Created by **[Adrian Dunkley](https://adriandunkley.net/)**, physicist and AI sc
 
 - **[Read the Playbook website](https://aiplaybooklac.netlify.app/)**
 - **[Start the government playbook](government/README.md)**
+- **[Use the TurtleBird AI safety toolkit](government/turtlebird/README.md)**
 - **[Explore 39 government use cases](government/use-cases.md)**
 - **[Download the structured catalogue](government/use-cases.json)**
 

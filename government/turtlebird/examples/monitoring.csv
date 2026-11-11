@@ -1,0 +1,13 @@
+case_id,slice,model_result,baseline_result
+M01,standard-en,pass,pass
+M02,standard-en,pass,pass
+M03,standard-en,pass,pass
+M04,standard-en,pass,pass
+M05,jamaican-patwa,pass,pass
+M06,jamaican-patwa,pass,pass
+M07,jamaican-patwa,pass,pass
+M08,jamaican-patwa,pass,pass
+M09,no-current-source,pass,pass
+M10,no-current-source,pass,pass
+M11,no-current-source,critical,pass
+M12,no-current-source,pass,pass
