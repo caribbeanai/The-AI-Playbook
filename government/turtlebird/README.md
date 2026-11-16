@@ -1,6 +1,6 @@
 # TurtleBird
 
-![TurtleBird AI Safety Toolkit banner with a green turtle-bird and shield](assets/turtlebird.jpg)
+![TurtleBird AI Safety Toolkit banner with a Jamaican doctor bird perched on a Caribbean sea turtle](assets/turtlebird.jpg)
 
 **Prepared by [Adrian Dunkley](https://adriandunkley.net/).**
 
