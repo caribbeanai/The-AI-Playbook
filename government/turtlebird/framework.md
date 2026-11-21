@@ -75,15 +75,15 @@ flowchart TD
 
 ## 4. Practise a stop and restart
 
-Pick a fictional service interruption. Ask the shift lead to identify who can pause AI use, which channel staff move to and how they deal with cases already in the queue. Check that a member of the public can still reach the service when the AI component or its upstream vendor is unavailable. Record any wait time or staff burden observed in the exercise.
+Choose a simulated service interruption. Ask the shift lead to identify who can pause AI use, which channel staff move to and how they deal with cases already in the queue. Check that a member of the public can still reach the service when the AI component or its upstream vendor is unavailable. Record any wait time or staff burden observed in the exercise.
 
 Before a restart, identify what changed, rerun the failed cases and test nearby conditions. A deadline error may come from several causes, including the wrong source version, stale retrieval or a rubric that allowed unsupported inferences. Require the responsible owner to review the retest, approve the restart and specify any increased sampling. Record the next review date so a temporary control does not become permanent by default.
 
-## 5. Read the fictional exercise
+## 5. Read the synthetic exercise
 
 The included examples concern a staff-facing FAQ assistant. Three conditions cover standard English, Jamaican Patwa and questions with no current approved source. A small demonstration policy calls for 12 cases overall, with four per condition. These counts and rates illustrate the code. A production team should justify its own sampling and thresholds.
 
-In the validation file, the assistant passes 11 of 12 fictional cases and the baseline passes 8 of 12. In the monitoring file, the assistant again passes 11 of 12. This time the remaining case is marked critical because the assistant supplied an invented service deadline where no source was current. Both files have the same aggregate model pass rate, but the second routes to escalation.
+In the validation file, the assistant passes 11 of 12 synthetic cases and the baseline passes 8 of 12. In the monitoring file, the assistant again passes 11 of 12. This time the remaining case is marked critical because the assistant supplied an invented service deadline where no source was current. Both files have the same aggregate model pass rate, but the second routes to escalation.
 
 ## 6. Use the source material
 

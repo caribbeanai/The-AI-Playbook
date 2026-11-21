@@ -46,6 +46,49 @@ class SafetyGateTests(unittest.TestCase):
         self.assertEqual(report["status"], "investigate")
         self.assertEqual(report["slices"]["new-context"]["reasons"], ["slice_not_in_policy"])
 
+    def test_empty_input_requires_investigation(self):
+        report = assess.assess([], self.policy, "monitor")
+        self.assertEqual(report["status"], "investigate")
+        self.assertIsNone(report["overall"]["model_pass_rate"])
+        self.assertEqual(report["overall"]["reasons"], ["too_few_cases"])
+
+    def test_threshold_boundaries(self):
+        assess.validate_thresholds({"min_cases": 1, "min_pass_rate": 1}, "test")
+        invalid = [
+            {"min_cases": True, "min_pass_rate": 0.8},
+            {"min_cases": 0, "min_pass_rate": 0.8},
+            {"min_cases": 1, "min_pass_rate": 0},
+            {"min_cases": 1, "min_pass_rate": 1.01},
+            {"min_cases": 1, "min_pass_rate": float("nan")},
+            {"min_cases": 1, "min_pass_rate": True},
+        ]
+        for value in invalid:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                assess.validate_thresholds(value, "test")
+
+    def test_duplicate_policy_keys_are_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "policy.json"
+            path.write_text('{"overall": {}, "overall": {}, "slices": {}}', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Duplicate policy key"):
+                assess.load_policy(path)
+
+    def test_csv_structure_and_results_are_checked(self):
+        header = "case_id,slice,model_result,baseline_result\n"
+        invalid = [
+            "wrong,columns\n",
+            header + "A,x,pass\n",
+            header + "A,x,pass,pass,extra\n",
+            header + "A,x,unknown,pass\n",
+            header + "A,,pass,pass\n",
+        ]
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "cases.csv"
+            for contents in invalid:
+                with self.subTest(contents=contents), self.assertRaises(ValueError):
+                    path.write_text(contents, encoding="utf-8")
+                    assess.load_cases(path)
+
     def test_cli_exit_codes_and_malformed_input(self):
         command = [sys.executable, str(ROOT / "assess.py"), "monitor",
                    "--policy", str(EXAMPLES / "policy.json"), "--cases"]

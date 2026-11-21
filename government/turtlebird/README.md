@@ -11,7 +11,7 @@ TurtleBird helps Caribbean public bodies decide when an AI pilot is ready for hu
 | [Field guide](framework.md) | A release framework, monitoring rules, a stop-and-restart procedure and two process diagrams |
 | [Working records](records.md) | Copyable pilot, risk, test, incident and decision records |
 | [Python assessor](assess.py) | JSON reports for validation and monitoring, with overall and per-slice results |
-| [Fictional examples](examples/) | A sample policy and two test windows for a public-service FAQ |
+| [Synthetic examples](examples/) | A sample policy and two test windows for a public-service FAQ |
 
 ## Run the example
 
@@ -23,13 +23,24 @@ python3 assess.py validate --policy examples/policy.json --cases examples/valida
 python3 assess.py monitor --policy examples/policy.json --cases examples/monitoring.csv
 ```
 
-The validation example yields `ready_for_human_review`. The monitoring example yields `escalate_and_consider_pause` because a fictional critical failure overrides the aggregate pass rate. That second command exits with status 1 as designed.
+The validation example yields `ready_for_human_review`. The monitoring example yields `escalate_and_consider_pause` because a critical failure in the synthetic monitoring sample overrides the aggregate pass rate. That second command exits with status 1 as designed.
 
 | Exit code | What it means |
 | --- | --- |
 | 0 | The submitted evidence meets the configured checks for that mode |
 | 1 | A threshold, coverage check or critical-failure rule requires attention |
 | 2 | The input could not be evaluated. Correct it before using the report |
+
+## Check your installation
+
+From the repository root, run the toolkit tests and the Playbook content checks.
+
+```bash
+python3 -m unittest discover -s government/turtlebird/tests -v
+python3 scripts/validate_content.py
+```
+
+The tests cover critical-failure escalation, missing test groups, empty input, invalid thresholds, duplicate policy keys, malformed CSV records and CLI exit codes. The content checks cover the Playbook catalogue, local links and licence notice.
 
 ## Bring your own reviewed cases
 
